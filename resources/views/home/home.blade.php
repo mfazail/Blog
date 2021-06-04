@@ -8,14 +8,18 @@
             height: 35px;
             background: rgba(129, 140, 248, var(--tw-bg-opacity));
             border-radius: 50%;
-            border: 4px solid white;
+            border: 5px solid white;
             text-align: center;
             color: white;
-            line-height: 22px;
+            line-height: 25px;
         }
 
         .owl-next span {
             right: 0;
+        }
+
+        .owl-nav {
+            display: block !important;
         }
 
         .owl-prev span {
@@ -32,8 +36,8 @@
             @empty
                 <h1>Not Post Found</h1> @endforelse
             @elseif ($posts->count() > 0)
-                @for ($i = 0; $i < 3; $i++)
-                    <x-card :post="$post[$i]" />
+                @for ($i = 0; $i < 2; $i++)
+                    <x-card :post="$posts[$i]" />
                 @endfor
             @endif
 
@@ -56,8 +60,8 @@
             $(".owl-carousel").owlCarousel({
                 loop: true,
                 margin: 10,
-                dots: false,
                 nav: true,
+                dots: false,
                 autoplay: true,
                 autoplayTimeout: 3000,
                 autoplayHoverPause: true,
@@ -68,12 +72,15 @@
                     },
                     // breakpoint from 480 up
                     480: {
+                        nav: true,
                         items: 2,
                     },
                     // breakpoint from 768 up
                     1024: {
                         nav: true,
                         items: 3,
+                        touchDrag: false,
+                        freeDrag: true
                     }
                 }
             });

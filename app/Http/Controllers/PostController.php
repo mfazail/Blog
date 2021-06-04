@@ -122,8 +122,10 @@ class PostController extends Controller
 
     public function search(Request $request)
     {
-        $search = ucwords($request->input('search'));
-        $posts = Post::where('title', 'like' . '%' . $search . '%')->orWhere('content', 'like' . '%' . $search . '%')->with('user')->get();
+        $search = lcfirst($request->input('search'));
+        $posts = Post::where('title', 'like', '%' . $search . '%')->orWhere('content', 'like', '%' . $search . '%')->with('user')->get();
+        // return $posts . $search;
+
         return view('search', compact('posts'));
     }
 }
