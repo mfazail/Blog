@@ -20,5 +20,11 @@
         "postcss": "^8.1.14",
         "postcss-import": "^14.0.1",
         "tailwindcss": "^2.0.1"
+    },
+    "dependencies": {
+        "@ckeditor/ckeditor5-build-classic": "^27.1.0",
+        "@ckeditor/ckeditor5-dev-utils": "^25.2.1",
+        "@ckeditor/ckeditor5-dev-webpack-plugin": "^25.2.1",
+        "@ckeditor/ckeditor5-theme-lark": "^27.1.0"
     }
 }
