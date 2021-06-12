@@ -33,7 +33,7 @@ class MyUploadAdapter {
         // integration to choose the right communication channel. This example uses
         // a POST request with JSON as a data structure but your configuration
         // could be different.
-        xhr.open("POST", "http://localhost:3000/upload_image", true);
+        xhr.open("POST", "https://localhost:8000/upload_image", true);
         xhr.setRequestHeader(
             "x-csrf-token",
             document.querySelector('meta[name="csrf-token"]').content
@@ -143,11 +143,18 @@ var toolbarOptions = [
 ];
 
 ClassicEditor.create(document.querySelector("#editor"), {
-        extraPlugins: [MyCustomUploadAdapterPlugin],
         toolbar: toolbarOptions,
         image: {
             toolbar: ["imageStyle:full", "imageStyle:side", "imageTextAlternative"],
             styles: ["full", "side"],
+        },
+        simpleUpload: {
+            uploadUrl: "http://127.0.0.1:8000/upload_image",
+            withCredentials: true,
+            headers: {
+                "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]')
+                    .content,
+            },
         },
     })
     .then((editor) => {

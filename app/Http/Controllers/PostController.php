@@ -44,7 +44,7 @@ class PostController extends Controller
         $content = $request->input('content');
         $category = $request->input('category');
         $imageExt = $cover_photo->getClientOriginalExtension();
-        $res = $cover_photo->storeAs('uploads', $title . now()->timestamp . '.' . $imageExt);
+        $res = $cover_photo->storeAs('posts', $title . now()->timestamp . '.' . $imageExt);
         $url = 'storage/' . $res;
         $post = Post::create([
             'user_id' => Auth::user()->id,
@@ -110,7 +110,7 @@ class PostController extends Controller
 
     public function image(Request $request)
     {
-        $image = $request->file('image');
+        $image = $request->file('upload');
         $imageName = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
         $imageExt = $image->getClientOriginalExtension();
         $res = $image->storeAs('uploads', $imageName . now()->timestamp . '.' . $imageExt);

@@ -8,7 +8,7 @@
             height: 35px;
             background: rgba(129, 140, 248, var(--tw-bg-opacity));
             border-radius: 50%;
-            border: 5px solid white;
+            border: 4px solid white;
             text-align: center;
             color: white;
             line-height: 25px;

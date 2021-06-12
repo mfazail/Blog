@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <link rel="shortcut icon" href="{{ asset('favicon.jpg') }}" type="image/x-icon">
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
@@ -34,9 +34,9 @@
         </main>
         {{-- Footer --}}
     </div>
-    <footer class="w-full h-12 bg-indigo-400">
-        <div class="max-w-7xl mx-auto">
-            <h1 class="text-white">Footer</h1>
+    <footer class="w-full h-8 bg-indigo-400">
+        <div class="flex justify-center items-center px-2">
+            <h1 class="text-white">&copy; 2021 - FTBLOG.in</h1>
         </div>
     </footer>
 
