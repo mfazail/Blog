@@ -6,8 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+
+    <meta name="theme-color" content="#ffffff">
+    <title>{{ config('app.name', 'FTBLOG') }}</title>
+    <meta name="description" content="FTBLOG.in">
+    <meta property="og:url" content="https://ftblog.in/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="FTBLOG.in">
+    <meta property="og:image" content="https://ftblog.in/logo.png">
+    <meta name="twitter:title" content="FTBLOG.in">
+    <meta property="og:title" content="FTBLOG.in">
+
     <link rel="shortcut icon" href="{{ asset('favicon.jpg') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.jpg') }}" sizes="180x180">
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
@@ -21,6 +34,12 @@
     <!-- Scripts -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
@@ -42,6 +61,7 @@
 
     @stack('modals')
     @livewireScripts
+
 </body>
 
 </html>
