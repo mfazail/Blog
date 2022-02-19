@@ -1,4 +1,5 @@
 <div class="w-full">
+    {{ $ip }}
     <form wire:submit.prevent="addCategory" class="flex justify-between w-full">
         <div>
             <x-jet-input wire:model="category" placeholder="Category" id="category" class="block mt-1 w-full"
