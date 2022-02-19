@@ -9,6 +9,12 @@ use Illuminate\Support\Str;
 class AddCategory extends Component
 {
     public $category;
+    public $ip;
+
+    public function mount()
+    {
+       $this->ip = request()->ip();
+    }
 
     public function render()
     {
