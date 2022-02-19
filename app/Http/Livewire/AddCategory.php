@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Category;
 use Livewire\Component;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
 class AddCategory extends Component
 {
