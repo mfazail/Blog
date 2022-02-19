@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PostController::class, 'index'])->name('home');
+Route::get('/ip', function(){
+    return request()->ip();
+});
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
